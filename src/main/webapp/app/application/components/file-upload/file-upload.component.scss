@@ -1,0 +1,54 @@
+.file-upload-wrapper {
+  width: 100%;
+  //background-color: aquamarine;
+  button{
+    margin: 0 15px;
+  }
+  border-bottom: 1px solid #949494;
+  padding-bottom: 15px;
+  margin-bottom: 22px;
+  .container {
+    .upload-item {
+      width: 100%;
+      .icon {
+        width: 30px;
+      }
+      .upload-detail {
+        //height: 100%;
+        //line-height: 100%;
+        margin: 0;
+        width: 60%;
+      }
+      button {
+        //border-radius: 50px;
+        min-width: 50px !important;
+        //padding: 5px 10px;
+        font-size: 17px;
+      }
+    }
+  }
+}
+.file-upload-wrapper-tepco {
+    button{
+        background: #79d6ce;
+    }
+    .add-files-btn{
+        background: #00B5A6 !important;
+    }
+}
+.file-upload-wrapper-chuden {
+    button{
+        background: #f3b070;
+    }
+    .add-files-btn{
+        background: #f59a3f !important;
+    }
+}
+.file-upload-wrapper-kepco {
+    button{
+        background: #f5cbcb;
+    }
+    .add-files-btn{
+        background: #fd7474 !important;
+    }
+}

@@ -1,0 +1,226 @@
+<div class="page-wrapper color-bg-page-tepco" id="page-wrapper" fxLayoutAlign="center start">
+    <div class="page-content">
+        <div class="stepper-wrapper" fxLayout="row" fxLayoutAlign="center start">
+            <app-stepper class="stepper" [stepperData]="stepperData" [currentStep]="1"></app-stepper>
+            <div class="illustrator"></div>
+        </div>
+        <div class="application-area">
+            <form [formGroup]="form">
+                <div class="card z-depth-1">
+                    <div class="card-body">
+                        <h4 class="card-title">申込基本情報</h4>
+                        <div class="input-area" fxLayout="column" fxLayoutAlign=" none">
+                            <div fxLayout="row" fxLayoutAlign="start start">
+                                <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                                    <mat-form-field>
+                                        <mat-label>申込者名</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['subscriberName']" required>
+                                        <span matPrefix><fa name="user-circle-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['subscriberName'].invalid">{{getErrorMessage('subscriberName')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>携帯電話番号（固定電話番号）</mat-label>
+                                        <input matInput placeholder="99-9999-9999" [formControl]="form.controls['phone']" required>
+                                        <span matPrefix><fa name="phone" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="!form.controls['phone'].valid">{{getErrorMessage('phone')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>郵便番号</mat-label>
+                                        <input matInput placeholder="999-9999" [formControl]="form.controls['postcode']" required>
+                                        <span matPrefix><fa name="map-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['postcode'].invalid">{{getErrorMessage('postcode')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>市区町村</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['district']" required>
+                                        <span matPrefix><fa name="map-marker" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['district'].invalid">{{getErrorMessage('district')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>ビル・建物名</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['building']" required>
+                                        <span matPrefix><fa name="building" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['building'].invalid">{{getErrorMessage('building')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>予備項目2</mat-label>
+                                        <input matInput placeholder="予備項目" >
+                                    </mat-form-field>
+                                </div>
+                                <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                                    <mat-form-field>
+                                        <mat-label>申込者名カナ</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['subscriberNameKana']" required>
+                                        <span matPrefix><fa name="address-card-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['subscriberNameKana'].invalid">
+                                            {{getErrorMessage('subscriberNameKana')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>メールアドレス</mat-label>
+                                        <input matInput placeholder="メールアドレスを入力" [formControl]="form.controls['email']" required>
+                                        <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+                                        <span matPrefix><fa name="envelope-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>都道府県</mat-label>
+                                        <mat-select placeholder="Color" [formControl]="form.controls['prefectures']" required>
+                                            <mat-option *ngFor="let option of prefecturesData" [value]="option.value">{{option.title}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <span matPrefix><fa name="location-arrow" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['prefectures'].invalid">{{getErrorMessage('prefectures')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>町村丁番地</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['street']" required>
+                                        <span matPrefix><fa name="road" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['street'].invalid">{{getErrorMessage('street')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>予備項目1</mat-label>
+                                        <input matInput placeholder="予備項目" >
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>予備項目3</mat-label>
+                                        <input matInput placeholder="予備項目" >
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="addition-input">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="icon">
+                                            <fa name="upload" size="1x"></fa>
+                                        </td>
+                                        <td>
+                                            <app-file-upload [oldFiles]="this.applicationModel.fileAttachments"></app-file-upload>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="icon">
+                                            <div style="margin-top: 16px">
+                                                <fa name="sticky-note-o" size="1x"></fa>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <mat-form-field style="width: 100%">
+                                                <mat-label>詳細</mat-label>
+                                                <textarea matInput placeholder="メモを取る" cdkAutosizeMinRows="5" cdkAutosizeMaxRows="5"
+                                                          [rows]="5" [formControl]="form.controls['detail']"></textarea>
+                                                <mat-error *ngIf="form.controls['detail'].invalid">{{getErrorMessage('detail')}}</mat-error>
+                                            </mat-form-field>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card z-depth-1">
+                    <div class="card-body">
+                        <h4 class="card-title">申込情報</h4>
+                        <div class="input-area" fxLayout="column" fxLayoutAlign=" none">
+                            <div fxLayout="row" fxLayoutAlign="start start">
+                                <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                                    <mat-form-field>
+                                        <mat-label>契約名義名</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['contractName']" required>
+                                        <span matPrefix><fa name="user-circle-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['contractName'].invalid">{{getErrorMessage('contractName')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>電力エリア</mat-label>
+                                        <mat-select placeholder="" [formControl]="form.controls['powerArea']">
+                                            <mat-option *ngFor="let option of powerAreaData" [value]="option.value">{{option.title}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <span matPrefix><fa name="bullseye" size="1x"></fa>&nbsp;&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['powerArea'].invalid">{{getErrorMessage('powerArea')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>現在の電力会社契約番号</mat-label>
+                                        <mat-select placeholder="" [formControl]="form.controls['currentElectricCompany']">
+                                            <mat-option *ngFor="let option of currentCompanyData" [value]="option.value">{{option.title}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <span matPrefix><fa name="handshake-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['currentElectricCompany'].invalid">
+                                            {{getErrorMessage('currentElectricCompany')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>現在の契約種別</mat-label>
+                                        <mat-select placeholder="" [formControl]="form.controls['price']">
+                                            <mat-option *ngFor="let option of priceData" [value]="option.value">{{option.title}}</mat-option>
+                                        </mat-select>
+                                        <span matPrefix><fa name="jpy" size="1x"></fa>&nbsp;&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['price'].invalid">{{getErrorMessage('price')}}</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>契約電流</mat-label>
+                                        <input matInput placeholder="" >
+                                        <span matPrefix><fa name="user-circle-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                                    <mat-form-field>
+                                        <mat-label>契約名義名</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['contractNameKana']" required>
+                                        <span matPrefix><fa name="address-card-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['contractNameKana'].invalid">
+                                            {{getErrorMessage('contractNameKana')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>供給地点特定番号</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['supplyIdentificationNumber']"
+                                               required>
+                                        <mat-hint align="end">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;検針票に記載のある、22桁の番号となります。</mat-hint>
+                                        <span matPrefix><fa name="address-book-o" size="1x"></fa>&nbsp;&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['supplyIdentificationNumber'].invalid">
+                                            {{getErrorMessage('supplyIdentificationNumber')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>現在の電力会社</mat-label>
+                                        <input matInput placeholder="" [formControl]="form.controls['currentContractNumber']" required>
+                                        <span matPrefix><fa name="qrcode" size="1x"></fa>&nbsp;&nbsp;&nbsp;</span>
+                                        <mat-error *ngIf="form.controls['currentContractNumber'].invalid">
+                                            {{getErrorMessage('currentContractNumber')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>契約電力</mat-label>
+                                        <input matInput placeholder="" >
+                                        <span matPrefix><fa name="user-circle-o" size="1x"></fa>&nbsp;&nbsp;</span>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <p>※一時保存する際は、FT顧客番号以外は任意入力になります。</p>
+                    </div>
+                </div>
+                <div class="card z-depth-1">
+                    <div class="card-body">
+                        <div class="btn-set" fxLayout="row" fxLayoutAlign="center center">
+                            <button mat-raised-button (click)="confirm()" type="submit">
+                                確　認
+                            </button>
+                            <button mat-raised-button (click)="save()">
+                                一時保存
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

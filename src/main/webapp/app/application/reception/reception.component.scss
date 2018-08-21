@@ -1,0 +1,189 @@
+.page-wrapper {
+  width: 100%;
+  .page-content {
+    width: 1200px;
+    padding: 0;
+    margin-bottom: 30px;
+    .stepper-wrapper {
+      position: relative;
+      .stepper {
+        width: 800px;
+      }
+      .illustrator {
+        position: absolute;
+        width: 110px;
+        height: 130px;
+        background: transparent url("../../../content/images/illustrator.png") no-repeat center center;
+        background-size: 100%;
+        top: -35px;
+        right: 50px;
+      }
+    }
+    .application-area {
+      width: 100%;
+      background-color: transparent;
+      margin-top: 20px;
+      .card {
+        margin-top: 20px;
+        .card-body {
+          height: auto;
+          .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            //margin-top: 30px;
+            padding: 10px 15px;
+            //margin-bottom: 20px;
+          }
+        }
+      }
+
+      //.form-title {
+      //  background: linear-gradient(#48ace6, #0887cb);
+      //  padding: 7px 10px;
+      //  border-radius: 5px;
+      //  color: #ffffff;
+      //  margin-bottom: 0;
+      //}
+      .input-area {
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        .sub-input {
+          //background-color: orange;
+          width: 48%;
+          padding: 0 1%;
+          //height: 300px;
+        }
+        .addition-input {
+          width: 100%;
+          margin-top: 15px;
+          //height: 300px;
+          //background-color: #4baee7;
+          table {
+            width: 96%;
+            padding: 0 2%;
+            //background-color: antiquewhite;
+            td.icon {
+              font-size: 18px;
+              vertical-align: top;
+              padding: 0 11px;
+              width: 20px;
+            }
+          }
+          //.icon-note i {
+          //  margin-top: 20px;
+          //}
+          textarea {
+            resize: none;
+          }
+        }
+        .application-input {
+          width: 100%;
+          //background-color: orange;
+        }
+
+
+        //padding-bottom: 25px;
+        //padding-left: 50px;
+        //.form-group {
+        //  margin-bottom: 0 !important;
+        //}
+        //.form-control {
+        //  background-color: #e6edf3;
+        //}
+        //p.warning {
+        //  color: #44a0dd;
+        //  margin-top: 10px;
+        //}
+        //label.note {
+        //  margin-top: 6px;
+        //}
+      }
+      .btn-set {
+        button {
+          margin: 0px 20px;
+        }
+      }
+    }
+  }
+}
+
+.btn-scheme {
+  color: #fff;
+  background: linear-gradient(#44a0dd, #1a51a0);
+  margin-top: 8px;
+  &:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+}
+
+.btn-upload {
+  background: linear-gradient(#f4f4f4, #cccccc);
+  border: 1px solid #555555;
+  margin-top: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 20px;
+  &.btn-add fa {
+    color: #30b841;
+  }
+  &.btn-delete fa {
+    color: red;
+  }
+}
+
+.btn-confirm {
+  width: 170px;
+}
+
+.btn-search {
+  text-decoration: none;
+  margin-top: 16px;
+  display: block;
+  color: #44a0dd;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-nav {
+  width: 150px;
+}
+
+.color-bg-page-tepco {
+    background-color: #ebf5ed;
+    .card-title {
+        border-left: 4px solid #00B5A6;
+        background: #E1F5EA;
+    }
+    .card-body {
+        button{
+            background: #00B5A6;
+        }
+    }
+}
+.color-bg-page-chuden {
+    background-color: #f5e1cd;
+    .card-title {
+        border-left: 4px solid #f59a3e;
+        background: #f1d3b6;
+    }
+    .card-body {
+        button{
+            background: #f59a3e;
+        }
+    }
+}
+
+.color-bg-page-kepco {
+    background-color: #f9eeee;
+    .card-title {
+        border-left: 4px solid #ff6262;
+        background-color: #f5cbcb;
+    }
+    .card-body {
+        button{
+            background: #fd7474;
+        }
+    }
+}

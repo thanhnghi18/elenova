@@ -1,0 +1,36 @@
+<div class="file-upload-wrapper" id="file-upload-wrapper">
+    <label>検針票</label>
+    <div>
+        <button [disabled]="uploading || uploadSuccessful" mat-raised-button class="add-files-btn"
+                (click)="addFiles()">
+            <fa name="plus" size="1x"></fa>&nbsp;&nbsp;ファイル追加
+        </button>
+        <!--<button mat-raised-button>-->
+            <!--<fa name="times" size="1x"></fa>&nbsp;&nbsp;中断-->
+        <!--</button>-->
+        <!--<button mat-raised-button>-->
+            <!--<fa name="trash-o" size="1x"></fa>&nbsp;&nbsp;削除-->
+        <!--</button>-->
+        <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple/>
+    </div>
+    <div class="container" fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-list>
+            <mat-list-item *ngFor="let file of files">
+                <div class="upload-item" fxLayout="row" fxLayoutAlign="start center">
+                    <div class="icon">
+                        <fa name="file-image-o " size="1x"></fa>
+                    </div>
+                    <label class="upload-detail">{{file.name}} ({{formatBytes(file.size,2)}})</label>
+                    <mat-progress-bar *ngIf="progress" mode="determinate"
+                                      [value]="progress[file.name].progress | async"></mat-progress-bar>
+                    <!--<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>-->
+                    <button mat-raised-button>
+                        <fa name="trash-o " size="1x"></fa>
+                    </button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>
+
+

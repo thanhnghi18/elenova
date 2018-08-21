@@ -1,0 +1,56 @@
+.page-wrapper {
+  background-color: #ebf5ed;
+  width: 100%;
+  .page-content {
+    width: 1200px;
+    padding: 0;
+    margin-bottom: 30px;
+    .stepper-wrapper {
+      position: relative;
+      .stepper {
+        width: 800px;
+      }
+      .illustrator {
+        position: absolute;
+        width: 110px;
+        height: 130px;
+        background: transparent url("../../../content/images/illustrator.png") no-repeat center center;
+        background-size: 100%;
+        top: -35px;
+        right: 50px;
+      }
+    }
+    .application-area {
+      width: 100%;
+      background-color: transparent;
+      .msg-confirm {
+        height: 300px;
+        width: 900px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        margin: 100px 0;
+        p {
+          font-size: 33px;
+          text-align: center;
+        }
+      }
+      .set-back {
+        margin: 50px 0;
+        a {
+          text-decoration: none;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+.color-bg-page-tepco {
+    background-color: #ebf5ed;
+}
+.color-bg-page-chuden {
+    background-color: #f5e1cd;
+}
+
+.color-bg-page-kepco {
+    background-color: #f9eeee;
+}

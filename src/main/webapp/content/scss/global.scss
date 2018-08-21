@@ -1,0 +1,294 @@
+//@import 'bootstrap-variables';
+//
+///* ==============================================================
+//Bootstrap tweaks
+//===============================================================*/
+//
+//body,
+//h1,
+//h2,
+//h3,
+//h4 {
+//    font-weight: 300;
+//}
+//
+//a {
+//    color: #533f03;
+//    font-weight: bold;
+//}
+//
+//a:hover {
+//    color: #533f03;
+//    font-weight: bold;
+//}
+//
+///* ==========================================================================
+//Browser Upgrade Prompt
+//========================================================================== */
+//.browserupgrade {
+//    margin: 0.2em 0;
+//    background: #ccc;
+//    color: #000;
+//    padding: 0.2em 0;
+//}
+//
+///* ==========================================================================
+//Generic styles
+//========================================================================== */
+//
+///* Error highlight on input fields */
+//.ng-valid[required],
+//.ng-valid.required {
+//    border-left: 5px solid green;
+//}
+//
+//.ng-invalid:not(form) {
+//    border-left: 5px solid red;
+//}
+//
+///* other generic styles */
+//
+//.jh-card {
+//    padding: 1.5%;
+//    margin-top: 20px;
+//    border: none;
+//}
+//
+//.error {
+//    color: white;
+//    background-color: red;
+//}
+//
+//.pad {
+//    padding: 10px;
+//}
+//
+//.w-40 {
+//    width: 40% !important;
+//}
+//
+//.w-60 {
+//    width: 60% !important;
+//}
+//
+//.break {
+//    white-space: normal;
+//    word-break: break-all;
+//}
+//
+//.readonly {
+//    background-color: #eee;
+//    opacity: 1;
+//}
+//
+//.footer {
+//    border-top: 1px solid rgba(0, 0, 0, 0.125);
+//}
+//
+///* ==========================================================================
+//make sure browsers use the pointer cursor for anchors, even with no href
+//========================================================================== */
+//a:hover {
+//    cursor: pointer;
+//}
+//
+//.hand,
+//[jhisortby] {
+//    cursor: pointer;
+//}
+//
+///* ==========================================================================
+//Custom alerts for notification
+//========================================================================== */
+//.alerts {
+//    .alert {
+//        text-overflow: ellipsis;
+//        pre {
+//            background: none;
+//            border: none;
+//            font: inherit;
+//            color: inherit;
+//            padding: 0;
+//            margin: 0;
+//        }
+//        .popover pre {
+//            font-size: 10px;
+//        }
+//    }
+//    .toast {
+//        position: fixed;
+//        width: 100%;
+//        &.left {
+//            left: 5px;
+//        }
+//        &.right {
+//            right: 5px;
+//        }
+//        &.top {
+//            top: 55px;
+//        }
+//        &.bottom {
+//            bottom: 55px;
+//        }
+//    }
+//}
+//
+//@media screen and (min-width: 480px) {
+//    .alerts .toast {
+//        width: 50%;
+//    }
+//}
+//
+///* ==========================================================================
+//entity tables helpers
+//========================================================================== */
+//
+///* Remove Bootstrap padding from the element
+//http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
+//@mixin no-padding($side) {
+//    @if $side == 'all' {
+//        .no-padding {
+//            padding: 0 !important;
+//        }
+//    } @else {
+//        .no-padding-#{$side} {
+//            padding-#{$side}: 0 !important;
+//        }
+//    }
+//}
+//@include no-padding('left');
+//@include no-padding('right');
+//@include no-padding('top');
+//@include no-padding('bottom');
+//@include no-padding('all');
+//
+///* bootstrap 3 input-group 100% width
+//http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+//.width-min {
+//    width: 1% !important;
+//}
+//
+///* Makes toolbar not wrap on smaller screens
+//http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
+//.flex-btn-group-container {
+//    display: -webkit-flex;
+//    display: flex;
+//    -webkit-flex-direction: row;
+//    flex-direction: row;
+//    -webkit-justify-content: flex-end;
+//    justify-content: flex-end;
+//}
+//
+///* ==========================================================================
+//entity detail page css
+//========================================================================== */
+//.row.jh-entity-details > {
+//    dd {
+//        margin-bottom: 15px;
+//    }
+//}
+//
+//@media screen and (min-width: 768px) {
+//    .row.jh-entity-details > {
+//        dt {
+//            margin-bottom: 15px;
+//        }
+//        dd {
+//            border-bottom: 1px solid #eee;
+//            padding-left: 180px;
+//            margin-left: 0;
+//        }
+//    }
+//}
+//
+///* ==========================================================================
+//ui bootstrap tweaks
+//========================================================================== */
+//.nav,
+//.pagination,
+//.panel-title a {
+//    cursor: pointer;
+//}
+//
+//.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default,
+//.uib-datepicker-popup > li > div.uib-datepicker > table .btn-default {
+//    border: 0;
+//}
+//
+//.datetime-picker-dropdown > li.date-picker-menu div > table:focus,
+//.uib-datepicker-popup > li > div.uib-datepicker > table:focus {
+//    outline: none;
+//}
+//
+//.thread-dump-modal-lock {
+//    max-width: 450px;
+//    overflow: hidden;
+//    text-overflow: ellipsis;
+//    white-space: nowrap;
+//}
+//
+///* jhipster-needle-scss-add-main JHipster will add new css style */
+
+
+@import '~@angular/material/theming';
+
+$mat-customize: (
+    50: #e8f5e9,
+    100: #c8e6c9,
+    200: #00B5A6,
+    300: #81c784,
+    400: #66bb6a,
+    500: #4baee7,
+    600: #43a047,
+    700: #388e3c,
+    800: #2e7d32,
+    900: #00B5A6,
+    A100: #b9f6ca,
+    A200: #00B5A6,
+    A400: #00e676,
+    A700: #00c853,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $dark-primary-text,
+        400: $dark-primary-text,
+        500: $dark-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $dark-primary-text,
+        A400: $dark-primary-text,
+        A700: $dark-primary-text,
+    )
+);
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$candy-app-primary: mat-palette($mat-customize);
+$candy-app-accent:  mat-palette($mat-customize, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each components used in your app.
+// Alternatively, you can import and @include the theme mixins for each components
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+
+body {
+    font-size: 18px;
+}

@@ -1,0 +1,277 @@
+$stepper-height: 70px;
+$step-todo-color-tepco: #79d6ce;
+$step-active-color-tepco: #00B5A6;
+$step-completed-color-tepco: #00B5A6;
+$step-todo-color-chuden: #f3b070;
+$step-active-color-chuden: #f59a3e;
+$step-completed-color-chuden: #f59a3e;
+$step-todo-color-kepco: #f5cbcb;
+$step-active-color-kepco: #fd7474;
+$step-completed-color-kepco: #fd7474;
+
+.wizard {
+  font-size: 18px;
+  line-height: 18px;
+  list-style-type: none;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding-left: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 18px 0;
+  li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table-cell;
+    margin: 16px 0;
+    //padding-right: 26px;
+    padding-right: 40px;
+  }
+}
+
+//.wizard
+
+//.wizard
+
+.wizard li:last-child {
+  //padding-right: 0;
+  padding-right: 40px;
+  border-radius: 15px;
+  .step-container {
+    border-radius: 0 15px 15px 0;
+  }
+}
+
+.wizard li .step-container {
+  position: relative;
+  display: block;
+  min-height: $stepper-height;
+  text-align: center;
+  text-decoration: none;
+}
+
+.wizard li .step-container .label,
+.wizard li .step-container .number {
+  display: block;
+  font-weight: normal;
+  line-height: $stepper-height;
+  text-overflow: ellipsis;
+}
+
+.wizard li .step-container .label {
+  white-space: nowrap;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.wizard li .step-container .number {
+  display: none;
+}
+
+.wizard li .step-container:after, .wizard li .step-container:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-top: $stepper-height / 2 solid;
+  border-bottom: $stepper-height / 2 solid;
+  border-left: 23px solid;
+  z-index: 10;
+}
+
+.wizard li .step-container:after {
+  right: -23px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.wizard li .step-container:before {
+  left: -23px;
+  border-left-color: transparent;
+}
+
+.wizard li:last-child .step-container:after {
+  display: none;
+}
+
+.wizard-tepco li.step-completed .step-container {
+  background-color: $step-completed-color-tepco;
+  color: #ffffff;
+}
+
+.wizard-tepco li.step-completed .step-container:after {
+  border-left-color: $step-completed-color-tepco;
+}
+
+.wizard-tepco li.step-completed .step-container:before {
+  border-top-color: $step-completed-color-tepco;
+  border-bottom-color: $step-completed-color-tepco;
+}
+
+.wizard-tepco li.step-active .step-container {
+  background-color: $step-active-color-tepco;
+  color: #ffffff;
+}
+
+.wizard-tepco li.step-active .step-container:after {
+  border-left-color: $step-active-color-tepco;
+}
+
+.wizard-tepco li.step-active .step-container:before {
+  border-top-color: $step-active-color-tepco;
+  border-bottom-color: $step-active-color-tepco;
+}
+
+.wizard-tepco li.step-todo .step-container {
+  background-color: $step-todo-color-tepco;
+  color: #ffffff;
+}
+
+.wizard-tepco li.step-todo .step-container:after {
+  border-left-color: $step-todo-color-tepco;
+}
+
+.wizard-tepco li.step-todo .step-container:before {
+  border-top-color: $step-todo-color-tepco;
+  border-bottom-color: $step-todo-color-tepco;
+}
+
+
+.wizard-chuden li.step-completed .step-container {
+    background-color: $step-completed-color-chuden;
+    color: #ffffff;
+}
+
+.wizard-chuden li.step-completed .step-container:after {
+    border-left-color: $step-completed-color-chuden;
+}
+
+.wizard-chuden li.step-completed .step-container:before {
+    border-top-color: $step-completed-color-chuden;
+    border-bottom-color: $step-completed-color-chuden;
+}
+
+.wizard-chuden li.step-active .step-container {
+    background-color: $step-active-color-chuden;
+    color: #ffffff;
+}
+
+.wizard-chuden li.step-active .step-container:after {
+    border-left-color: $step-active-color-chuden;
+}
+
+.wizard-chuden li.step-active .step-container:before {
+    border-top-color: $step-active-color-chuden;
+    border-bottom-color: $step-active-color-chuden;
+}
+
+.wizard-chuden li.step-todo .step-container {
+    background-color: $step-todo-color-chuden;
+    color: #ffffff;
+}
+
+.wizard-chuden li.step-todo .step-container:after {
+    border-left-color: $step-todo-color-chuden;
+}
+
+.wizard-chuden li.step-todo .step-container:before {
+    border-top-color: $step-todo-color-chuden;
+    border-bottom-color: $step-todo-color-chuden;
+}
+
+
+.wizard-kepco li.step-completed .step-container {
+    background-color: $step-completed-color-kepco;
+    color: #ffffff;
+}
+
+.wizard-kepco li.step-completed .step-container:after {
+    border-left-color: $step-completed-color-kepco;
+}
+
+.wizard-kepco li.step-completed .step-container:before {
+    border-top-color: $step-completed-color-kepco;
+    border-bottom-color: $step-completed-color-kepco;
+}
+
+
+.wizard-kepco li.step-active .step-container {
+    background-color: $step-active-color-kepco;
+    color: #ffffff;
+}
+
+.wizard-kepco li.step-active .step-container:after {
+    border-left-color: $step-active-color-kepco;
+}
+
+.wizard-kepco li.step-active .step-container:before {
+    border-top-color: $step-active-color-kepco;
+    border-bottom-color: $step-active-color-kepco;
+}
+
+.wizard-kepco li.step-todo .step-container {
+    background-color: $step-todo-color-kepco;
+    color: #ffffff;
+}
+
+.wizard-kepco li.step-todo .step-container:after {
+    border-left-color: $step-todo-color-kepco;
+}
+
+.wizard-kepco li.step-todo .step-container:before {
+    border-top-color: $step-todo-color-kepco;
+    border-bottom-color: $step-todo-color-kepco;
+}
+
+@media only screen and (min-width: 0) and (max-width: 767px) {
+  .wizard li {
+    width: 15%;
+    padding-right: 13px;
+  }
+
+  .wizard li .step-container {
+    min-height: 40px;
+  }
+
+  .wizard li .step-container:after, .wizard li .step-container:before {
+    border-top-width: 20px;
+    border-bottom-width: 20px;
+    border-left-width: 10px;
+  }
+
+  .wizard li .step-container:after {
+    right: -10px;
+  }
+
+  .wizard li .step-container:before {
+    left: -10px;
+  }
+
+  .wizard li .step-container .label,
+  .wizard li .step-container .number {
+    line-height: 40px;
+  }
+
+  .wizard li .step-container .label {
+    display: none;
+  }
+
+  .wizard li .step-container .number {
+    display: block;
+  }
+
+  .wizard li.step-active {
+    width: 55%;
+  }
+
+  .wizard li.step-active .step-container .label {
+    display: block;
+  }
+
+  .wizard li.step-active .step-container .number {
+    display: none;
+  }
+}

@@ -1,0 +1,92 @@
+///* ==========================================================================
+//Navbar
+//========================================================================== */
+
+$page-width: 1200px;
+$navbar-height: 100px;
+
+.navbar {
+    //background-color: #eeeeee;
+    padding: 0;
+    .navbar-content-tepco {
+        width: $page-width;
+        height: $navbar-height;
+        background-color: transparent;
+        .logo-container{
+            width: 200px;
+            height: 100%;
+            background: transparent url("../../../content/images/logo1.png") no-repeat center center;
+            background-size: contain;
+        }
+        .info{
+            //width: 350px;
+            height: 100%;
+        }
+        .nav-item {
+            margin-left: 30px;
+            color: #231f20;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            text-decoration: underline;
+        }
+    }
+    .navbar-content-chuden {
+        width: $page-width;
+        height: $navbar-height;
+        background-color: transparent;
+        .logo-container{
+            width: 200px;
+            height: 100%;
+            background: transparent url("../../../content/images/logo2.png") no-repeat center center;
+            background-size: contain;
+        }
+        .info{
+            //width: 350px;
+            height: 100%;
+        }
+        .nav-item {
+            margin-left: 30px;
+            color: #231f20;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            text-decoration: underline;
+        }
+    }
+    .navbar-content-kepco {
+        width: $page-width;
+        height: $navbar-height;
+        background-color: transparent;
+        .logo-container{
+            width: 200px;
+            height: 100%;
+            background: transparent url("../../../content/images/logo3.png") no-repeat center center;
+            background-size: contain;
+        }
+        .info{
+            //width: 350px;
+            height: 100%;
+        }
+        .nav-item {
+            margin-left: 30px;
+            color: #231f20;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.welcome-navbar {
+    .navbar-content-tepco {
+        background: transparent url("../../../content/images/lamp-top.png") no-repeat right center;
+    }
+    .navbar-content-chuden {
+        background: transparent url("../../../content/images/lamp-top.png") no-repeat right center;
+    }
+    .navbar-content-kepco {
+        background: transparent url("../../../content/images/lamp-top.png") no-repeat right center;
+    }
+}

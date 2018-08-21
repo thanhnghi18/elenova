@@ -1,0 +1,30 @@
+.confirm-upload-wrapper {
+  width: 100%;
+  //background-color: aquamarine;
+  button{
+    margin: 0 15px;
+  }
+  border-bottom: 1px solid #949494;
+  padding-bottom: 15px;
+  margin-bottom: 22px;
+  .container {
+    .upload-item {
+      width: 100%;
+      .icon {
+        width: 30px;
+      }
+      .upload-detail {
+        //height: 100%;
+        //line-height: 100%;
+        margin: 0;
+        width: 45%;
+      }
+      button {
+        //border-radius: 50px;
+        min-width: 50px !important;
+        //padding: 5px 10px;
+        font-size: 17px;
+      }
+    }
+  }
+}

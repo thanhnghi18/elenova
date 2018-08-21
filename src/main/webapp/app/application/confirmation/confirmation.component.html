@@ -1,0 +1,101 @@
+<div class="page-wrapper" id="page-wrapper-confirm" fxLayout="row" fxLayoutAlign="center start">
+  <div class="page-content">
+    <div class="stepper-wrapper" fxLayout="row" fxLayoutAlign="center start">
+      <app-stepper class="stepper" [stepperData]="stepperData" [currentStep]="2"></app-stepper>
+      <div class="illustrator"></div>
+    </div>
+    <div class="application-area">
+      <div class="card z-depth-1">
+        <div class="card-body">
+          <h4 class="card-title">申込基本情報</h4>
+          <div class="confirm-area" fxLayout="column" fxLayoutAlign=" none">
+            <div fxLayout="row" fxLayoutAlign="start start">
+              <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                <app-item-confirmation [title]="'契約者名'" [value]="application.subscriberName" [iconName]="'user-circle-o'"></app-item-confirmation>
+                <app-item-confirmation [title]="'電話番号'" [value]="application.phone" [iconName]="'phone'"></app-item-confirmation>
+                <app-item-confirmation [title]="'郵便番号'" [value]="application.postalCode" [iconName]="'map-o'"></app-item-confirmation>
+                <app-item-confirmation [title]="'市町区'" [value]="application.district" [iconName]="'map-marker'"></app-item-confirmation>
+                <app-item-confirmation [title]="'ビル・建物名'" [value]="application.building" [iconName]="'building'"></app-item-confirmation>
+                <app-item-confirmation [title]="'予備項目2'" [value]="" [iconName]="'building'"></app-item-confirmation>
+              </div>
+              <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                <app-item-confirmation [title]="'契約者名カナ'" [value]="application.subscriberNameKana" [iconName]="'address-card-o'"></app-item-confirmation>
+                <app-item-confirmation [title]="'メールアドレス'" [value]="application.mail" [iconName]="'envelope-o'"></app-item-confirmation>
+                <app-item-confirmation [title]="'都道府県'"  [value]="getPrefecturesData()" [iconName]="'location-arrow'"></app-item-confirmation>
+                <app-item-confirmation [title]="'町村丁番地'" [value]="application.street" [iconName]="'road'"></app-item-confirmation>
+                <app-item-confirmation [title]="'予備項目1'" [value]="" [iconName]="'building'"></app-item-confirmation>
+                <app-item-confirmation [title]="'予備項目3'" [value]="" [iconName]="'building'"></app-item-confirmation>
+              </div>
+            </div>
+          </div>
+          <div class="addition-confirmation">
+            <table>
+              <tbody>
+              <!--<tr>-->
+                <!--<td class="icon">-->
+                  <!--<fa name="upload" size="1x"></fa>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<app-upload-confirmation></app-upload-confirmation>-->
+                <!--</td>-->
+              <!--</tr>-->
+              <tr>
+                <td class="icon">
+                  <div style="margin-top: 16px">
+                    <fa name="sticky-note-o" size="1x"></fa>
+                  </div>
+                </td>
+                <td>
+                  <p class="note-title">詳細</p>
+                  <div class="note-confirmation">
+                    {{application.detail}}
+                  </div>
+                  <!--<mat-form-field style="width: 100%">-->
+                    <!--<mat-label>詳細</mat-label>-->
+                    <!--<textarea matInput placeholder="メモを取る" cdkAutosizeMinRows="5" cdkAutosizeMaxRows="5"-->
+                              <!--[rows]="5" [formControl]="form.controls['detail']" ></textarea>-->
+                    <!--<mat-error *ngIf="form.controls['detail'].invalid">{{getErrorMessage('detail')}}</mat-error>-->
+                  <!--</mat-form-field>-->
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card z-depth-1">
+        <div class="card-body">
+          <h4 class="card-title">申込基本情報</h4>
+            <div class="confirm-area" fxLayout="column" fxLayoutAlign=" none">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                        <app-item-confirmation [title]="'契約名義名'" [value]="application.contractName" [iconName]="'user-circle-o'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'電力エリア'" [value]="getPowerAreaData()" [iconName]="'bullseye'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'現在の電力会社契約番号'" [value]="" [iconName]="'building'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'現在の契約種別'" [value]="getPriceData()" [iconName]="'jpy'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'契約電流'" [value]="" [iconName]="'building'"></app-item-confirmation>
+                    </div>
+                    <div class="sub-input" fxLayout="column" fxLayoutAlign=" none">
+                        <app-item-confirmation [title]="'契約名義名'" [value]="application.contratNameKana" [iconName]="'user-circle-o'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'供給地点特定番号'" [value]="application.supplyIdentificationNumber" [iconName]="'address-book-o'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'現在の電力会社'" [value]="getCurrentCompanyData()" [iconName]="'handshake-o'"></app-item-confirmation>
+                        <app-item-confirmation [title]="'契約電力'" [value]="" [iconName]="'building'"></app-item-confirmation>
+                    </div>
+          </div>
+        </div>
+      </div>
+      <div class="card z-depth-1">
+        <div class="card-body">
+          <div class="btn-set" fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" (click)="back()">
+              戻　る
+            </button>
+            <button mat-raised-button color="primary" (click)="confirm()">
+            登　録
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

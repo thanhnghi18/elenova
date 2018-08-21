@@ -1,0 +1,29 @@
+.item-confirm {
+  //background-color: orange;
+  margin-bottom: 25px;
+  .title {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    font-weight: 400;
+    //height: 20px;
+    padding: 0 0 0 45px;
+    margin: 0;
+  }
+  .value-wrapper {
+    border-bottom: 1px solid #949494;
+  }
+  .icon {
+    width: 45px;
+    //background-color: #4baee7;
+  }
+  .value {
+    //color: #1982C8;
+    color: #000;
+    //padding: 8px 0;
+    margin: 0;
+    height: 36px;
+    line-height: 36px;
+    font-size: 20px;
+    //font-weight: 700;
+  }
+}

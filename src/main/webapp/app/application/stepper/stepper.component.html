@@ -1,0 +1,5 @@
+<ol class="wizard wizard-tepco" id="wizard" title="Wizard progress steps"  >
+  <li *ngFor="let stepper of stepperData" [ngClass]="(stepper.stepIndex < currentStep)?'step-completed':(stepper.stepIndex == currentStep)?'step-active':'step-todo'">
+    <div class="step-container"><span class="number">4</span><span class="label">{{stepper.stepTitle}}</span></div>
+  </li>
+</ol>

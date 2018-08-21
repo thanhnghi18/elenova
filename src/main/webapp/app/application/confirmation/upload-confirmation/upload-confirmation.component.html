@@ -1,0 +1,22 @@
+<div class="confirm-upload-wrapper">
+  <label>添付ファイル</label>
+  <div class="container" fxLayout="column" fxLayoutAlign="center stretch">
+    <p *ngIf="!files || files.size === 0">ファイルがアップロードされていません</p>
+    <mat-list *ngIf="files && files.size > 0">
+      <mat-list-item *ngFor="let file of files">
+        <div class="upload-item" fxLayout="row" fxLayoutAlign="start center">
+          <div class="icon">
+            <fa name="file-image-o " size="1x"></fa>
+          </div>
+          <label class="upload-detail">{{file.name}} ({{formatBytes(file.size,2)}})</label>
+          <button mat-raised-button>
+            <fa name="trash-o " size="1x"></fa>
+          </button>
+          <!--<mat-progress-bar *ngIf="progress" mode="determinate" [value]="progress[file.name].progress | async"></mat-progress-bar>-->
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+
+

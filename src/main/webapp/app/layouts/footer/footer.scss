@@ -1,0 +1,40 @@
+$page-width: 1200px;
+$footer-height: 100px;
+$welcome-footer-height: 176px;
+
+.footer {
+    .footer-content {
+        width: $page-width;
+        height: $footer-height;
+        .logo-container{
+            width: 200px;
+            height: 100%;
+            background-size: contain;
+        }
+        .info{
+            //width: 350px;
+            height: 100%;
+        }
+        .logo-container-tepco{
+            background: transparent url("../../../content/images/logo1.png") no-repeat center center;
+        }
+        .logo-container-chuden{
+            background: transparent url("../../../content/images/logo2.png") no-repeat center center;
+        }
+        .logo-container-kepco{
+            background: transparent url("../../../content/images/logo3.png") no-repeat center center;
+        }
+    }
+}
+
+.welcome-footer {
+    background: transparent url("../../../content/images/bottom.png") no-repeat -8px center;
+    .footer-content {
+        width: $page-width;
+        height: $welcome-footer-height;
+        .info{
+            margin-top: 100px;
+            //height: 100%;
+        }
+    }
+}

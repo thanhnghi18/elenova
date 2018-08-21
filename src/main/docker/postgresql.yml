@@ -1,0 +1,11 @@
+version: '2'
+services:
+    elenova-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/elenova/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=elenova
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

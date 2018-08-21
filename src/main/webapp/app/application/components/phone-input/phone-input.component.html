@@ -1,0 +1,9 @@
+<div [formGroup]="parts">
+  <!--<form [formGroup]="parts" (blur)="onBlur()">-->
+  <input class="area" type="tel" formControlName="area" size="2" maxlength="2" (change)="onChangePhoneValue()" (focus)="onFocusTel()" (blur)="onBlurTel()">
+  <span>&ndash;</span>
+  <input class="exchange" type="tel" formControlName="exchange" size="4" maxlength="4" (change)="onChangePhoneValue()" (focus)="onFocusTel()" (blur)="onBlurTel()">
+  <span>&ndash;</span>
+  <input class="subscriber" type="tel" formControlName="subscriber" size="4" maxlength="4" (change)="onChangePhoneValue()" (focus)="onFocusTel()" (blur)="onBlurTel()">
+  <!--</form>-->
+</div>
